@@ -1,0 +1,214 @@
+.dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    margin-bottom: var(--space-8);
+}
+
+.dashboard-header h1 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-1);
+}
+
+.dashboard-subtitle {
+    color: var(--color-text-muted);
+}
+
+/* Loading & Error States */
+.dashboard-loading,
+.dashboard-error,
+.dashboard-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    padding: var(--space-8);
+}
+
+.dashboard-error .error-icon,
+.dashboard-empty .empty-illustration {
+    font-size: 4rem;
+    margin-bottom: var(--space-4);
+}
+
+.dashboard-loading p,
+.dashboard-error p,
+.dashboard-empty p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+}
+
+.empty-actions {
+    display: flex;
+    gap: var(--space-4);
+}
+
+/* Alerts */
+.alerts-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+}
+
+.alert-warning {
+    background: var(--color-warning-light);
+    color: #92400e;
+}
+
+.alert-caution {
+    background: var(--color-info-light);
+    color: #3730a3;
+}
+
+.alert-icon {
+    font-size: var(--text-lg);
+}
+
+/* KPI Grid */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+/* Forecast Banner */
+.forecast-banner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-info-light) 100%);
+    border: 1px solid var(--color-primary-100);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-8);
+}
+
+.forecast-icon {
+    font-size: var(--text-3xl);
+}
+
+.forecast-content h3 {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-1);
+}
+
+.forecast-content p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+.forecast-content strong {
+    color: var(--color-text);
+}
+
+.forecast-note {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* Charts Grid */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+}
+
+.chart-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-5);
+}
+
+.card-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+}
+
+.card-subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.card-link {
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    font-weight: var(--font-medium);
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* Bottom Grid */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-6);
+}
+
+.invoices-card,
+.insights-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .forecast-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .empty-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .empty-actions .btn {
+        width: 100%;
+    }
+}

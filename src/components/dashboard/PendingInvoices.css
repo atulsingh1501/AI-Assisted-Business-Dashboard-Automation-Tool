@@ -1,0 +1,69 @@
+.pending-invoices {
+    margin: calc(-1 * var(--space-2));
+}
+
+.invoices-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+}
+
+.invoices-table {
+    width: 100%;
+}
+
+.invoices-table th {
+    background: transparent;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+}
+
+.invoices-table td {
+    padding: var(--space-3);
+    font-size: var(--text-sm);
+}
+
+.invoice-number {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+}
+
+.client-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-cell .client-name {
+    font-weight: var(--font-medium);
+}
+
+.client-cell .client-company {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.amount-cell {
+    font-weight: var(--font-semibold);
+    font-family: var(--font-mono);
+}
+
+.invoices-table .badge {
+    text-transform: capitalize;
+}
+
+.revenue-chart {
+    height: 280px;
+}
+
+.chart-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+}

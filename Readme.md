@@ -1,163 +1,187 @@
-# AI-Assisted Business Dashboard & Automation Tool
+# AI-Assisted Business Dashboard
 
-## 📌 Project Overview
-An **AI-assisted business dashboard** built for **freelancers, small businesses, and startup founders** to track clients, monitor revenue, forecast profits, and make data-driven decisions from a single platform.
+A multi-tenant SaaS web application for freelancers and small teams to manage business operations, view analytics, and receive AI-generated insights.
 
-The system combines **structured business analytics** with **AI-powered insights** to help users understand what’s happening in their business and what actions to take next.
+![Dashboard Preview](https://via.placeholder.com/800x400?text=AI+Business+Dashboard)
 
-> AI is used to support better decisions — not to replace human judgment.
+## 🚀 Features
 
----
-
-## 🎯 Problem Statement
-Freelancers and small teams often:
-- Track clients and payments across multiple tools
-- Lack visibility into revenue and pending payments
-- Miss follow-ups due to poor prioritization
-- Spend time analyzing data instead of acting on it
-
-This results in **cash-flow issues, delayed decisions, and lost opportunities**.
-
----
-
-## 💡 Solution
-This dashboard provides:
-- A centralized view of business performance
-- Real-time revenue, expense, and payment insights
-- Client and project tracking
-- AI-assisted summaries and action recommendations
-- Revenue and profit forecasting based on historical data
-
-All insights are generated from **actual business data**, not assumptions.
-
----
-
-## ⚙️ How It Works
-
-### 1️⃣ Data Management
-- Client information
-- Project and payment records
-- Revenue and expense tracking
-- Time-based financial data for trend analysis
-
----
-
-### 2️⃣ Business Logic Layer
-- Total and monthly revenue calculation
-- Profit and loss computation
-- Pending payment detection
-- Top-performing client identification
-- Growth comparison across time periods
-
----
-
-### 3️⃣ Dashboard Interface
-- KPI summary cards (Revenue, Profit, Pending Payments)
-- Client and payment tables
-- Revenue and expense charts
-- Growth and trend visualizations
-
----
-
-### 4️⃣ Predictive Insights (Forecasting)
-- Revenue trend analysis using historical data
-- Profit and loss prediction for upcoming months
-- Early warning signals for declining cash flow
-
-**Example Insight:**
-> “Based on the last 6 months of data, projected revenue for next month is ₹85,000 with a potential profit margin of 32%.”
-
----
-
-### 5️⃣ AI Assistance (Decision Support)
-AI processes structured business data and generates:
-- Business performance summaries
-- Risk and opportunity signals
-- Priority-based action suggestions
-
-**Example Suggestions:**
-- “Client A contributes 38% of revenue but has delayed payments — follow-up recommended.”
-- “Expenses increased by 21% this month, mainly from tools and subscriptions.”
-- “If the current trend continues, cash-flow pressure may occur within 2 months.”
-
-The AI system uses a **hybrid approach**:
-- Rule-based business logic for calculations and alerts
-- Language model assistance for insight generation and summaries
-
----
-
-### 6️⃣ Automation (Planned / Optional)
-- Weekly business performance summaries
-- Alerts when unpaid invoices cross a defined threshold
-- Smart follow-up suggestions based on client payment history
-
----
-
-## 👥 Target Users
-- Freelancers
-- Small business owners
-- Startup founders
-- Small teams needing quick business visibility
-
----
-
-## 🧠 What This Project Demonstrates
-- Real-world problem solving
-- Business-focused product thinking
-- Practical use of AI in web applications
-- Predictive analytics and decision-support systems
-- Clean, scalable frontend architecture
-- Modern backend architecture choices
-
----
+- **📊 Dashboard Analytics** - Real-time KPIs including revenue, expenses, profit margins, and growth trends
+- **👥 Client Management** - Full CRUD for managing client relationships
+- **📄 Invoice Tracking** - Create, track, and manage invoices with status filters
+- **💸 Expense Tracking** - Categorized expense management with monthly summaries
+- **🔮 Forecasting** - Simple revenue predictions using moving averages and trend analysis
+- **🤖 AI Insights** - AI-generated business summaries, risk detection, and action recommendations
+- **🔒 Secure Auth** - Supabase authentication with Row Level Security
 
 ## 🛠 Tech Stack
-- HTML, CSS
-- JavaScript
-- React
-- Chart library for data visualization
-- Supabase (PostgreSQL, Auth, APIs)
-- AI API for insights and summaries
-- Deployed on modern cloud platforms
 
----
+| Category | Technology |
+|----------|------------|
+| Frontend | React 18 + Vite |
+| Styling | Vanilla CSS with CSS Variables |
+| Backend | Supabase (PostgreSQL + Auth) |
+| Charts | Chart.js + react-chartjs-2 |
+| AI | OpenAI API (optional) |
+| Dates | date-fns |
 
-## 🧩 Backend Architecture Decision
+## 📦 Installation
 
-### Why Supabase?
-This project is built as a **real, client-ready product**, not just a college assignment.
+### Prerequisites
 
-Supabase was chosen to:
-- Reduce backend development overhead
-- Provide secure authentication and database access
-- Enable rapid iteration and scalability
-- Focus on business logic and user experience
+- Node.js 18+ 
+- npm or pnpm
+- Supabase account (free tier works)
 
----
+### 1. Clone and Install
 
-### Architecture Overview
-```
-Frontend (React)
-↓
-Supabase Client SDK
-↓
-PostgreSQL Database + Auth
-↓
-AI API (Insights & Summaries)
+```bash
+git clone <your-repo-url>
+cd AI-ABD
+npm install
 ```
 
----
+### 2. Set Up Supabase
 
-### Future Scalability
-If advanced backend workflows or custom services are required, a **Node.js + Express** service can be introduced alongside Supabase without changing the frontend architecture.
+1. Create a new project at [supabase.com](https://supabase.com)
+2. Go to **Settings > API** and copy your:
+   - Project URL
+   - anon/public key
+3. Run the database schema:
+   - Go to **SQL Editor** in Supabase dashboard
+   - Paste contents of `supabase/schema.sql`
+   - Click **Run**
 
----
+### 3. Configure Environment
 
-## 🚀 Project Status
-**In Progress**  
-Features and AI capabilities are being developed iteratively.
+Create a `.env` file in the project root:
 
----
+```env
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
 
-## 🏁 One-Line Pitch
-An AI-assisted business dashboard that helps freelancers and small businesses track clients, forecast profits, and make smarter decisions using data-driven insights.
+# Optional: For AI insights
+VITE_OPENAI_API_KEY=your-openai-key
+```
+
+### 4. Start Development Server
+
+```bash
+npm run dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173)
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── ai/              # AI insights components
+│   ├── dashboard/       # Dashboard widgets (KPIs, charts)
+│   ├── layout/          # DashboardLayout, sidebar
+│   └── ui/              # Reusable UI (Spinner, etc.)
+├── context/
+│   ├── AuthContext.jsx  # Authentication state
+│   └── BusinessContext.jsx # Business data state
+├── pages/
+│   ├── Dashboard.jsx    # Main analytics dashboard
+│   ├── Clients.jsx      # Client management
+│   ├── Invoices.jsx     # Invoice management
+│   ├── Expenses.jsx     # Expense tracking
+│   ├── Insights.jsx     # AI insights page
+│   ├── Landing.jsx      # Public landing page
+│   ├── Login.jsx        # Authentication
+│   ├── Signup.jsx       # Registration
+│   └── Onboarding.jsx   # Business setup
+├── services/
+│   ├── supabase.js      # Supabase client + DB helpers
+│   ├── analytics.js     # Analytics calculations
+│   ├── forecasting.js   # Prediction algorithms
+│   └── ai.js            # AI/OpenAI integration
+├── styles/
+│   └── index.css        # Global design system
+└── utils/
+    └── formatters.js    # Formatting utilities
+```
+
+## 🔐 Authentication Flow
+
+1. **Unauthenticated** → Landing page with signup/login
+2. **Authenticated, no business** → Onboarding flow
+3. **Authenticated + business** → Dashboard
+
+## 📈 Analytics Architecture
+
+All analytics are **deterministic** and calculated from stored data:
+
+- **Revenue**: Sum of paid invoices
+- **Expenses**: Sum of all expenses
+- **Profit**: Revenue - Expenses
+- **Month-over-Month Growth**: Comparing current vs previous month
+- **Top Clients**: Aggregated by paid invoice amounts
+
+AI is only used for:
+- Generating natural language summaries
+- Suggesting actions based on metrics
+- Risk detection and warnings
+
+## 🤖 AI Integration
+
+The AI integration is **optional**. Without an OpenAI API key, the app uses rule-based insights that still provide useful feedback.
+
+When configured, AI provides:
+- Business health summaries
+- Risk identification
+- Opportunity detection
+- Actionable recommendations
+
+## 🗄️ Database Schema
+
+See `supabase/schema.sql` for the complete schema. Tables include:
+
+- `businesses` - User's business profile
+- `clients` - Customer records
+- `invoices` - Invoice tracking with status
+- `expenses` - Categorized expense records
+
+All tables use Row Level Security (RLS) to ensure data isolation.
+
+## 🧪 Development
+
+```bash
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push to GitHub
+2. Import in Vercel
+3. Add environment variables
+4. Deploy
+
+### Other Platforms
+
+Build the static bundle with `npm run build`, output is in `/dist`.
+
+## 📜 License
+
+MIT License - feel free to use for personal or commercial projects.
+
+## 🙏 Credits
+
+Built with:
+- [React](https://react.dev)
+- [Vite](https://vitejs.dev)
+- [Supabase](https://supabase.com)
+- [Chart.js](https://chartjs.org)
+- [date-fns](https://date-fns.org)

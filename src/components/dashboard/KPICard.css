@@ -1,0 +1,99 @@
+.kpi-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    transition: all var(--transition-base);
+}
+
+.kpi-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.kpi-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+}
+
+.kpi-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kpi-icon.icon-revenue {
+    background: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.kpi-icon.icon-expenses {
+    background: var(--color-danger-light);
+    color: var(--color-danger);
+}
+
+.kpi-icon.icon-profit {
+    background: var(--color-primary-100);
+    color: var(--color-primary);
+}
+
+.kpi-icon.icon-pending {
+    background: var(--color-warning-light);
+    color: var(--color-warning);
+}
+
+.kpi-trend {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+}
+
+.kpi-trend.positive {
+    background: var(--color-success-light);
+    color: #065f46;
+}
+
+.kpi-trend.negative {
+    background: var(--color-danger-light);
+    color: #991b1b;
+}
+
+.trend-icon {
+    font-size: var(--text-sm);
+}
+
+.kpi-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.kpi-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-1);
+}
+
+.kpi-value {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text);
+}
+
+.kpi-value.negative {
+    color: var(--color-danger);
+}
+
+.kpi-subtitle {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+}
