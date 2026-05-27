@@ -2,7 +2,6 @@
 
 AI-Assisted Business Dashboard is a full-stack SaaS web application for freelancers and small teams to manage their entire business operations from one place. It provides real-time KPI tracking (revenue, expenses, profit margins, growth trends), full CRUD for client and invoice management, categorized expense tracking, and revenue forecasting using moving averages. The AI layer (powered by OpenAI) generates natural language business health summaries, detects risks, and suggests actionable recommendations. Built with React 18 + Vite, Supabase (PostgreSQL + Auth with Row Level Security), and Chart.js.
 
-![Dashboard Preview](https://via.placeholder.com/800x400?text=AI+Business+Dashboard)
 
 ## 🚀 Features
 
